@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+	<application>divversdb</application>
+	<version>1</version>
+
+    <!-- Configure java.util.logging -->
+    <system-properties>
+        <property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
+    </system-properties>
+
+    <static-files>
+        <include path="/**" expiration="600s" />
+        <include path="/**.png" expiration="30d" />
+        <include path="/**.jpg" expiration="30d" />
+        <include path="/**.gif" expiration="30d" />
+        <include path="/**.ico" expiration="30d" />
+        <include path="/**.swf" expiration="30d" />
+        <include path="/**.css" expiration="7d" />
+
+        <include path="/**.js" expiration="2d 12h" />
+        <exclude path="/**.php" /> 
+        <exclude path="/**.inc" />
+    </static-files>
+    <resource-files>
+        <include path="/**.php" />
+        <include path="/**.inc" />
+    </resource-files>
+</appengine-web-app>
